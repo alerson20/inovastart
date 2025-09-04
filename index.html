@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MegaDS - Agência Digital</title>
+    <!-- TailwindCSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBlue: '#0A192F',
+                        white: '#FFFFFF',
+                        red: '#E63946',
+                        black: '#000000',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Animações personalizadas */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        /* Efeito de digitação */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        .typing-animation {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end);
+        }
+    </style>
+</head>
+<body class="bg-darkBlue text-white font-sans">
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-darkBlue/90 backdrop-blur-sm z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-red">Mega<span class="text-white">DS</span></a>
+            
+            <!-- Menu para desktop -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-red transition-colors duration-300">Home</a>
+                <a href="#about" class="hover:text-red transition-colors duration-300">Sobre Nós</a>
+                <a href="#services" class="hover:text-red transition-colors duration-300">Serviços</a>
+                <a href="#contact" class="hover:text-red transition-colors duration-300">Contato</a>
+            </div>
+            
+            <!-- Botão para mobile -->
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Menu mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-darkBlue px-4 pb-4">
+            <a href="#home" class="block py-2 hover:text-red transition-colors duration-300">Home</a>
+            <a href="#about" class="block py-2 hover:text-red transition-colors duration-300">Sobre Nós</a>
+            <a href="#services" class="block py-2 hover:text-red transition-colors duration-300">Serviços</a>
+            <a href="#contact" class="block py-2 hover:text-red transition-colors duration-300">Contato</a>
+        </div>
+    </nav>
+
+    <!-- Seção Home -->
+    <section id="home" class="min-h-screen flex items-center pt-20 pb-16 px-4">
+        <div class="container mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fadeIn">Mega<span class="text-red">DS</span></h1>
+            <p class="text-xl md:text-2xl mb-8 typing-animation">Transformando ideias em realidade digital</p>
+            <a href="#contact" class="bg-red hover:bg-red/90 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 inline-block">
+                Entre em Contato
+            </a>
+        </div>
+    </section>
+
+    <!-- Seção Sobre Nós -->
+    <section id="about" class="py-16 px-4 bg-white/5">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Sobre <span class="text-red">Nós</span></h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="mb-6 text-lg">A MegaDS é uma agência digital apaixonada por transformar negócios através de soluções digitais inovadoras. Combinamos criatividade, tecnologia e estratégia para entregar resultados excepcionais.</p>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-red mb-2">Missão</h3>
+                            <p>Oferecer soluções digitais de alta qualidade que impulsionem o crescimento dos nossos clientes.</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold text-red mb-2">Visão</h3>
+                            <p>Ser referência em transformação digital, reconhecida pela excelência e inovação.</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold text-red mb-2">Valores</h3>
+                            <p>Inovação, transparência, excelência e parceria com nossos clientes.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center">
+                    <div class="bg-red/20 p-8 rounded-lg w-full max-w-md transform rotate-3 transition-transform duration-700 hover:rotate-0">
+                        <div class="bg-darkBlue p-8 rounded-lg shadow-lg -rotate-3 transition-transform duration-700 hover:rotate-0">
+                            <i class="fas fa-lightbulb text-red text-5xl mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-4">Por que nos escolher?</h3>
+                            <p>Combinamos expertise técnica com criatividade para entregar soluções que realmente funcionam para o seu negócio.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Serviços -->
+    <section id="services" class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Nossos <span class="text-red">Serviços</span></h2>
+            <p class="text-center text-lg mb-12 max-w-2xl mx-auto">Oferecemos soluções digitais completas para impulsionar seu negócio no ambiente online.</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card Landing Page -->
+                <div class="bg-white/5 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <i class="fas fa-window-maximize text-red text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Landing Page</h3>
+                    <p class="text-gray-300">Páginas de alta conversão focadas em resultados específicos para seu negócio.</p>
+                </div>
+                
+                <!-- Card Sites -->
+                <div class="bg-white/5 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <i class="fas fa-globe text-red text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Sites</h3>
+                    <p class="text-gray-300">Desenvolvimento de sites institucionais, blogs e portfólios com design responsivo.</p>
+                </div>
+                
+                <!-- Card Marketing Digital -->
+                <div class="bg-white/5 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <i class="fas fa-chart-line text-red text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Marketing Digital</h3>
+                    <p class="text-gray-300">Estratégias de SEO, mídias sociais e ads para aumentar sua presença digital.</p>
+                </div>
+                
+                <!-- Card Consultoria -->
+                <div class="bg-white/5 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <i class="fas fa-handshake text-red text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Consultoria</h3>
+                    <p class="text-gray-300">Análise e planejamento estratégico para sua transformação digital.</p>
+                </div>
+                
+                <!-- Card Cursos -->
+                <div class="bg-white/5 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <i class="fas fa-graduation-cap text-red text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Cursos</h3>
+                    <p class="text-gray-300">Capacitação em marketing digital, desenvolvimento web e ferramentas digitais.</p>
+                </div>
+                
+                <!-- Card Extra -->
+                <div class="bg-white/5 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <i class="fas fa-star text-red text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Soluções Personalizadas</h3>
+                    <p class="text-gray-300">Desenvolvemos soluções sob medida para as necessidades específicas do seu negócio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contact" class="py-16 px-4 bg-white/5">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Entre em <span class="text-red">Contato</span></h2>
+            <p class="text-center text-lg mb-12">Pronto para transformar seu negócio? Envie uma mensagem!</p>
+            
+            <form class="bg-darkBlue p-8 rounded-lg shadow-lg">
+                <div class="mb-6">
+                    <label for="name" class="block mb-2">Nome</label>
+                    <input type="text" id="name" class="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-red">
+                </div>
+                
+                <div class="mb-6">
+                    <label for="email" class="block mb-2">Email</label>
+                    <input type="email" id="email" class="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-red">
+                </div>
+                
+                <div class="mb-6">
+                    <label for="message" class="block mb-2">Mensagem</label>
+                    <textarea id="message" rows="5" class="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-red"></textarea>
+                </div>
+                
+                <button type="submit" class="bg-red hover:bg-red/90 text-white font-bold py-3 px-8 rounded transition-all duration-300 transform hover:scale-105 w-full">
+                    Enviar Mensagem
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4 text-center bg-black/30">
+        <div class="container mx-auto">
+            <p>&copy; 2023 MegaDS - Agência Digital. Todos os direitos reservados.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="#" class="text-white hover:text-red transition-colors duration-300"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white hover:text-red transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white hover:text-red transition-colors duration-300"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="text-white hover:text-red transition-colors duration-300"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript para funcionalidades -->
+    <script>
+        // Menu mobile toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+        
+        // Animação de scroll suave para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
